@@ -1,0 +1,59 @@
+empl id name dep 2nd high salary
+
+select 
+emp_id, dep_id, salary, dense rank () over (partition by dep_id order by salary desc) rn
+from table where rn = 2
+
+table: person
+
+Fname  Lname
+
+Syed  Abbas
+
+Kim   Abolrous
+
+Hazem  Abolrous
+
+Sam   Abolrous
+
+Herto  Acevedo
+
+Gustavo Achong
+
+Pilar  Ackerman
+
+Aaron  Adams
+
+Adam  Adams
+
+Alex  Adams
+
+Alexa  Adams
+ 
+the desired result would be : 
+
+Fname  Lname
+
+Kim   Abolrous
+
+Hazem  Abolrous
+
+Sam   Abolrous
+
+Aaron  Adams
+
+Adam  Adams
+
+Alex  Adams
+
+select fname, lname from person where lname="Abolrous" or lname="Adams"
+
+
+df=spark.read_csv("path\file_name" delimiter='|', header=False)
+fname, lname=withColumn(df[Name].split())
+
+
+
+
+Alexa  Adams
+ 
